@@ -283,6 +283,7 @@ class BillingClientImpl extends BillingClient {
 
     @SkuType String skuType = params.getSkuType();
     String newSku = params.getSku();
+    String developerPayload = params.getDeveloperPayload();
 
     // Checking for mandatory params fields
     if (newSku == null) {
@@ -334,7 +335,7 @@ class BillingClientImpl extends BillingClient {
                 mApplicationContext.getPackageName(),
                 newSku,
                 skuType,
-                null,
+                developerPayload,
                 extraParams);
       } else if (isSubscriptionUpdate) {
         // For subscriptions update we are calling corresponding service method
@@ -345,7 +346,7 @@ class BillingClientImpl extends BillingClient {
                 params.getOldSkus(),
                 newSku,
                 SkuType.SUBS,
-                /* developerPayload */ null);
+                developerPayload);
       } else {
         buyIntentBundle =
             mService.getBuyIntent(
@@ -353,7 +354,7 @@ class BillingClientImpl extends BillingClient {
                 mApplicationContext.getPackageName(),
                 newSku,
                 skuType,
-                /* developerPayload */ null);
+                developerPayload);
       }
 
       int responseCode = BillingHelper.getResponseCodeFromBundle(buyIntentBundle, TAG);

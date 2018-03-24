@@ -13,6 +13,7 @@ public class BillingFlowParams {
   private boolean mNotReplaceSkusProration;
   private String mAccountId;
   private boolean mVrPurchaseFlow;
+  private String developerPayload;
 
   /**
    * Returns the SKU that is being purchased or upgraded/downgraded to as published in the Google
@@ -49,6 +50,11 @@ public class BillingFlowParams {
   /** Returns an optional flag indicating whether you wish to launch a VR purchase flow. */
   public boolean getVrPurchaseFlow() {
     return mVrPurchaseFlow;
+  }
+
+  /** Returns an optional developer payload. */
+  public String getDeveloperPayload() {
+    return developerPayload;
   }
 
   /** Returns whether it has an optional params for a custom purchase flow. */
@@ -190,6 +196,14 @@ public class BillingFlowParams {
      */
     public Builder setVrPurchaseFlow(boolean isVrPurchaseFlow) {
       mParams.mVrPurchaseFlow = isVrPurchaseFlow;
+      return this;
+    }
+
+    /**
+     * Specify an optional developer payload field
+     */
+    public Builder setDeveloperPayload(String developerPayload) {
+      mParams.developerPayload = developerPayload;
       return this;
     }
 
