@@ -1,0 +1,24 @@
+apply plugin: 'com.android.library'
+
+
+android {
+    compileSdkVersion gradle.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion gradle.minSdkVersion
+        targetSdkVersion gradle.targetSdkVersion
+        versionCode gradle.versionCode
+        versionName gradle.versionName
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            consumerProguardFiles 'billing-proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:support-annotations:' + gradle.supportLibraryVersion
+}
