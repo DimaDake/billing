@@ -13,3 +13,16 @@ Original version lacks of the developerPayload support:
    https://stackoverflow.com/questions/46562806/play-billing-library-is-missing-developerpayload
  
 In this fork the developerPayload are supported.
+
+```groovy
+implementation 'me.drakeet.billing:billing:1.0.1'
+```
+
+```java
+BillingFlowParams flowParams = BillingFlowParams.newBuilder()
+                        .setSku("inapp_1")
+                        .setType(SkuType.INAPP)
+                        .setDeveloperPayload("your_custom_developer_payload")
+                        .build();
+int responseCode = billingClient.launchBillingFlow(MainActivity.this, flowParams);
+```
