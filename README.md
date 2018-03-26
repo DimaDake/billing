@@ -15,7 +15,7 @@ Original version lacks of the developerPayload support:
 In this fork the developerPayload are supported.
 
 ```groovy
-implementation 'me.drakeet.billing:billing:1.0.1'
+implementation 'com.github.dimadake:billing:1.0.1'
 ```
 
 ```java
