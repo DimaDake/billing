@@ -1,4 +1,6 @@
-# Billing Library with developerPayload support
+# Billing Library with developerPayload support 
+
+**[OUTDATED] The library is outdated. You may want to use [this](https://developer.android.com/google/play/billing/developer-payload#attribute) instead of developer payload**
 
 It's a fork of the Play Billing Library: https://developer.android.com/google/play/billing/billing_library.html
 
